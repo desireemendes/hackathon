@@ -1,3 +1,5 @@
+// import DeleteIcon from '@mui/icons-material/Delete';
+
 function Goal(props) {
 
   function handleClick() {
@@ -7,7 +9,7 @@ function Goal(props) {
  <div className="note">
    <h1>{props.title}</h1>
    <p>{props.content}</p>
-   <button onClick={handleClick}>DELETE</button>
+   <button onClick={handleClick}><i class="far fa-trash-alt"></i></button>
  </div>
  )
 }
