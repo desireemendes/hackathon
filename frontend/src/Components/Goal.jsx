@@ -1,4 +1,4 @@
-// import DeleteIcon from '@mui/icons-material/Delete';
+import "./Goal.scss"
 
 function Goal(props) {
 

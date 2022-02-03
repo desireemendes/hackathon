@@ -34,13 +34,13 @@ function CreateGoal(props) {
         <input name="title" 
         onChange={handleChange}
         value={goal.title}
-        placeholder="Title" 
+        placeholder="Location" 
         />
         <textarea 
         name="content" 
         onChange={handleChange}
         value={goal.content}
-        placeholder="What's your goal?" rows="3" />
+        placeholder="What do you want to do there?" rows="3" />
         <button onClick={submitGoal}>Add</button>
       </form>
     </div>

@@ -1,7 +1,7 @@
 import "./Header.scss"
 function Header() {
   return <header>
-    <h1>Travel Tracker</h1>
+    <h1>Travel Tracker  <i class="fas fa-plane"></i></h1>
   </header>
 }
 
