@@ -5,6 +5,8 @@ import CreateGoal from './Components/CreateGoal';
 import Goal from './Components/Goal';
 // import {Routes, Route} from "react-router-dom";
 // import Register from './Components/Register';
+import Map from './Components/Map';
+
 
 function App() {
   const [goals, setGoals] = useState([]);
@@ -25,6 +27,7 @@ function App() {
   return (
     <div>
       <Header />
+      <Map />
       <CreateGoal onAdd={addGoal} />
       {goals.map((goalItem, index) => {
         return (
