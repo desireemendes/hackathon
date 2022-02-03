@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./CreateGoal.scss";
 
 function CreateGoal(props) {
   const [goal, setGoal] = useState({
