@@ -6,13 +6,26 @@ import Goal from './Components/Goal';
 // import {Routes, Route} from "react-router-dom";
 import Register from './Components/Register';
 // import Map from './Components/Map';
+import { useEffect } from 'react';
 
+const localStorageKey = "goals-list";
 
 function App() {
   const [goals, setGoals] = useState([]);
   const [goal, setGoal] = useState({
     complete: false
   })
+
+  useEffect(() => {
+const storageGoals = JSON.parse(localStorage.getItem(localStorageKey))
+if (storageGoals) {
+  setGoals(storageGoals)
+}
+  }, []);
+
+  useEffect(() => {
+localStorage.setItem(localStorageKey, JSON.stringify(goals))
+  }, [goals]);
 
   function addGoal(newGoal) {
     setGoals((prevGoals) => {
