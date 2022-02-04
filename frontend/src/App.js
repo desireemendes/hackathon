@@ -5,11 +5,14 @@ import CreateGoal from './Components/CreateGoal';
 import Goal from './Components/Goal';
 // import {Routes, Route} from "react-router-dom";
 // import Register from './Components/Register';
-import Map from './Components/Map';
+// import Map from './Components/Map';
 
 
 function App() {
   const [goals, setGoals] = useState([]);
+  const [goal, setGoal] = useState({
+    complete: false
+  })
 
   function addGoal(newGoal) {
     setGoals((prevGoals) => {
@@ -24,10 +27,19 @@ function App() {
       });
     });
   }
+
+  const completeGoal = (id) => {
+    let mapped = goals.map(task => {
+      return task.id == id ? { ...task, complete: !task.complete } : { ...task};
+    });
+    setGoals(mapped);
+  }
+
+
+
   return (
     <div>
       <Header />
-      <Map />
       <CreateGoal onAdd={addGoal} />
       {goals.map((goalItem, index) => {
         return (
@@ -37,6 +49,7 @@ function App() {
             title={goalItem.title}
             content={goalItem.content}
             onDelete={deleteGoal}
+            onComplete={completeGoal}
           />
         );
       })}

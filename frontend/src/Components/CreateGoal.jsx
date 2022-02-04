@@ -4,7 +4,8 @@ import "./CreateGoal.scss";
 function CreateGoal(props) {
   const [goal, setGoal] = useState({
         title: "",
-        content: ""
+        content: "",
+        complete: false
         });
         
 
@@ -23,10 +24,13 @@ function CreateGoal(props) {
     props.onAdd(goal)
     setGoal({
       title: "",
-      content: ""
+      content: "",
+      complete: false
     })
     event.preventDefault()
     }
+
+   
 
   return (
     <div>
@@ -41,7 +45,9 @@ function CreateGoal(props) {
         onChange={handleChange}
         value={goal.content}
         placeholder="What do you want to do there?" rows="3" />
-        <button onClick={submitGoal}>Add</button>
+        <button onClick={submitGoal}>
+          <i className="fas fa-plus-square"></i>
+        </button>
       </form>
     </div>
   );
