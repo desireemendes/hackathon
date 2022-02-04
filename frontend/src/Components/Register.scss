@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 100px auto;
+  width: 90%;
+  box-shadow: 1px 1px 4px 1px lightgray;
+}
+
+
+.container input,
+.container textarea {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  border: none;
+  box-shadow: 1px 1px 4px 1px #fcca46;
+}
+
+.container input:focus,
+.container textarea:focus {
+  box-shadow: 1px 1px 4px 1px #fcca46;
+}
+
+button {
+  width: 150px;
+  font-size: 18px;
+  letter-spacing: 0.2rem;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  margin-top: 5px;
+}

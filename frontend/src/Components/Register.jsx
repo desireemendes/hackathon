@@ -1,5 +1,6 @@
 import Axios from "axios";
 import { useState } from "react";
+import "./Register.scss"
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -22,16 +23,27 @@ function Register() {
 
 
    return (
+     <div className="container">
     <div id="background">
       <form id="register">
         <h1>Register Now!</h1>
-       <input type="text" email="email" placeholder="email" />
-       <input type="password" name="password" placeholder="password"/>  
+        
+       <input type="text" email="email" placeholder="email" 
+         onChange={(e) => {
+          setEmail(e.target.value);
+        }}
+       />
+       <input type="password" name="password" placeholder="password"
+       onChange={(e) => {
+        setPassword(e.target.value);
+      }}
+      />  
         <button onClick={register}>
           Submit
         </button>
       
       </form>
+    </div>
     </div>
   );
 
